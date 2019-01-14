@@ -12,6 +12,7 @@ const addons = (addonsArg) => {
 };
 
 module.exports = (env) => {
+
     console.log(env);
 
     const envConfig = require(`./build-utils/webpack.${env.env}.js`);
