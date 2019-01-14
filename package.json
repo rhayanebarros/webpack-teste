@@ -7,16 +7,25 @@
     "build:watch:dev": "npm run build:watch -- --env.env=dev",
     "build:watch:prod": "npm run build:watch -- --env.env=prod",
     "build:watch": "npm run build -- --watch",
-    "build": "webpack"
+    "build:dev:bundlebuddy": "npm run build:dev -- --env.addons=bundlebuddy",
+    "build:dev:bundleanalyze": "npm run build:dev -- --env.addons=bundleanalyze",
+    "build:dev": "npm run build -- --env.env=dev",
+    "build:prod:bundlebuddy": "npm run build:prod -- --env.addons=bundlebuddy",
+    "build:prod:bundleanalyze": "npm run build:prod -- --env.addons=bundleanalyze",
+    "build:prod": "npm run build -- --env.env=prod",
+    "build:prod:firstplugin": "npm run build:prod --  --env.addons=firstplugin",
+    "build:allAddons": "npm run build:prod -- --env.addons=bundlebuddy --env.addons=bundleanalyze",
+    "build": "webpack",
+    "webpack-defaults": "webpack-defaults"
   },
   "author": "Rhayane Barros",
   "license": "ISC",
   "devDependencies": {
+    "bundle-buddy-webpack-plugin": "^0.3.0",
     "webpack": "^4.28.4",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
   }
 }
