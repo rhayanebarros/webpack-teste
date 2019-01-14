@@ -1,10 +1,12 @@
-const path = require("path");
 
-module.exports = {
-    mode: "none",
-    entry: "./src/",
-    output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, 'dist')
-    }
+const commonConfig = require("./build-utils/webpack.common");
+const webpackMerge = require("webpack-merge");
+
+module.exports = (env) => {
+    console.log(env);
+
+    const envConfig = require(`./build-utils/webpack.${env.env}.js`);
+
+    return webpackMerge(commonConfig, envConfig);
+    
 };

@@ -1,3 +1,3 @@
-const testTranspile = () => console.log('ES6 Config Rhay!');
+const testTranspile = () => console.log('ES6 Config func!');
 
 testTranspile();

@@ -4,8 +4,10 @@
   "description": "estudo",
   "main": "index.js",
   "scripts": {
-    "watch": "npm run build -- --watch",
-    "build": "webpack --verbose"
+    "build:watch:dev": "npm run build:watch -- --env.env=dev",
+    "build:watch:prod": "npm run build:watch -- --env.env=prod",
+    "build:watch": "npm run build -- --watch",
+    "build": "webpack"
   },
   "author": "Rhayane Barros",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "webpack-merge": "^4.2.1"
   }
 }
