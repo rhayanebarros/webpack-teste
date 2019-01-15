@@ -1,4 +1,3 @@
-
 const commonConfig = require("./build-utils/webpack.common");
 const webpackMerge = require("webpack-merge");
 

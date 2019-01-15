@@ -1,6 +1,6 @@
 const testTranspile = () => console.log('ES6 Config Funcionando!');
 import createCard from "./card";
-import "./quero.png";
+import "./index.css";
 
 createCard(
     "Im learning webpack!",
