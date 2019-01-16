@@ -1,6 +1,7 @@
 const commonPaths = require("./common-paths");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
     mode:'none',
@@ -26,7 +27,11 @@ const config = {
     },
     plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        })
     ]
 };
 
