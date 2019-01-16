@@ -1,4 +1,6 @@
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
+const UglifyJsWebpackPlugin = require("uglifyjs-webpack-plugin");
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
 module.exports = {
     devtool: "source-map",
@@ -14,6 +16,15 @@ module.exports = {
         ]
     },
     plugins:[
-        new ExtractTextWebpackPlugin("style.css")
+        new ExtractTextWebpackPlugin("style.css"),
+        new UglifyJsWebpackPlugin({
+            sourceMap: true
+        }),
+        new CompressionWebpackPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|html|css)$/,
+            minRatio: 0.8
+        })
     ]
 };
