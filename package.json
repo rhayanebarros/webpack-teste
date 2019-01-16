@@ -4,7 +4,7 @@
   "description": "estudo",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run webpack-dev-server -- --env.env=dev",
+    "start": "npm run webpack-dev-server -- --env.env=dev",
     "build": "npm run webpack -- --env.env=prod",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "webpack": "node ./node_modules/webpack/bin/webpack.js",
