@@ -8,7 +8,7 @@
     "build": "npm run webpack -- --env.env=prod",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "webpack": "node ./node_modules/webpack/bin/webpack.js",
-    "webpack-dev-server": "webpack-dev-server --port=3000 --hot",
+    "webpack-dev-server": "webpack-dev-server --hot",
     "webpack-defaults": "webpack-defaults"
   },
   "author": "Rhayane Barros",
