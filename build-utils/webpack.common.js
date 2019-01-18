@@ -1,30 +1,34 @@
 const commonPaths = require("./common-paths");
 const webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const config = {
     mode:'none',
     entry: commonPaths.appEntry,
     output: {
         filename: "main.js",
-        path: commonPaths.outpuPath
+        path: commonPaths.outpuPath,
     },
     module: {
         rules: [
             {
-                test: /\.png/,
-                use: [
-                    {
-                        loader:"url-loader",
-                        options: {
-                            limit: 120000000
-                        }
-                    }
-                ]
-            }
-        ]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'assets/img/[name].[ext]',
+                    },
+                }],
+            },
+        ],
     },
     devServer: {
         historyApiFallback: true,
@@ -33,16 +37,21 @@ const config = {
         port: 3000,
         watchContentBase: true,
         open: true,
-        clientLogLevel: 'none'
+        clientLogLevel: 'none',
     },
     plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            minify: false,
+        }),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css'
-        })
-    ]
+            filename: 'styles.css',
+        }),
+        new CleanWebpackPlugin(['dist'], {
+            root: `${__dirname}/../`,
+        }),
+    ],
 };
 
 module.exports = config;

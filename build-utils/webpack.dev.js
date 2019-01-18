@@ -3,14 +3,14 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
                     "style-loader",
                     "css-loader"
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
 };
 
 module.exports = config;
