@@ -7,7 +7,12 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const config = {
     mode:'none',
-    entry: commonPaths.appEntry,
+    entry: {
+        main:[
+            './src/index.js',
+            './src/index.css',
+        ],
+    },
     output: {
         filename: "main.js",
         path: commonPaths.outpuPath,

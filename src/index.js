@@ -1,4 +1,3 @@
-import './index.css';
 import MyImg from './assets/img/anel2.jpg'
 
 const testTranspile = () => console.log('ES6 Config Funcionando!');
