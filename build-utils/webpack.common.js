@@ -14,7 +14,7 @@ const config = {
         ],
     },
     output: {
-        filename: "main.js",
+        filename: "js/[name].js",
         path: commonPaths.outpuPath,
     },
     module: {
