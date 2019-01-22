@@ -33,6 +33,15 @@ const config = {
                     },
                 }],
             },
+            {
+                test: /\.(s)?htm(l)?$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: [':src', ':href'],
+                    },
+                },
+            },
         ],
     },
     devServer: {
