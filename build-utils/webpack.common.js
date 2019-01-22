@@ -60,7 +60,7 @@ const config = {
             minify: false,
         }),
         new MiniCssExtractPlugin({
-            filename: 'styles.css',
+            filename: 'css/[name].css',
         }),
         new CleanWebpackPlugin(['dist'], {
             root: `${__dirname}/../`,
